@@ -1,15 +1,18 @@
 # Imports
-import time
-from dronekit import connect, VehicleMode
+from dronekit import connect, Command, LocationGlobal
+from pymavlink import mavutil
+import time, sys, argparse, math
 
 # Setup
 connection_string = "/dev/ttyACM0"
 baud_rate = 115200
 
 # Establishing vehicle connection
-print("start connection...")
+print("Start connection...")
 print("Connecting to vehicle on: %s" % (connection_string,))
-vehicle = connect(connection_string, baud = baud_rate, wait_ready=True)
+vehicle = connect(connection_string, wait_ready=False) #baud = baud_rate, 
+vehicle.wait_ready(True, timeout=300)
+print("Vehicle connected!")
 
 # Return vehicle attributes (State)
 print("Vehicle attribute values:")

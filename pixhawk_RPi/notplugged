@@ -77,6 +77,7 @@ rpivid-h264mem
 rpivid-hevcmem
 rpivid-intcmem
 rpivid-vp9mem
+serial0
 serial1
 shm
 snd
@@ -150,6 +151,7 @@ tty8
 tty9
 ttyAMA0
 ttyprintk
+ttyS0
 uhid
 uinput
 urandom
